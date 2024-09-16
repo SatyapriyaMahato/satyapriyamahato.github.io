@@ -9,11 +9,13 @@
     :root {
         /* ### Primary */
 
-        --Soft-Blue: hsl(231, 69%, 60%);
+        --tech-list: #a9a9a9;
+        --Link-at-rest: #7e7e7e;
+        --Link-at-hover: #ffffff;
         --Soft-Red: hsl(0, 94%, 66%);
         --btn-bg-color: #5e5e5eff;
-        --secondary-bg-color: #2d2d2dff;
-        --primary-bg-color: #202020ff;
+        --secondary-bg-color: #161616;
+        --primary-bg-color: rgb(0, 0, 0);
 
         /* ### Neutral */
 
@@ -22,6 +24,9 @@
         --seconday-text-color: hsl(229, 8%, 60%);
 
         --Very-Dark-Blue: hsl(229, 31%, 21%);
+
+        --transition: .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
     }
 
     html {
@@ -80,11 +85,13 @@
 
     a {
         text-decoration: none;
-        color: var(--text-color);
+        color: var(--Link-at-rest);
     }
 
     a:hover {
-        color: var(--seconday-text-color);
+        color: var(--Link-at-hover);
+        cursor: pointer;
+        transition: var(--transition);
     }
 
     .ham {
@@ -137,14 +144,14 @@
         padding: 0 4rem;
     }
 
-    /************** Header Section ****************/
+    /*--------------------------- Header Section ------------------*/
     header {
         z-index: 4;
         margin: 0rem;
         position: sticky;
         top: 0;
         width: 100%;
-        background-color: black;
+        background-color: var(--primary-bg-color);
         padding: 2rem 0;
     }
 
@@ -170,15 +177,10 @@
         font-size: 1.2rem;
         letter-spacing: .15rem;
         font-weight: 400;
-        /* transition: all 0.2s ease-out; */
     }
 
-    .nav-link:hover {
-        color: var(--seconday-text-color);
-        cursor: pointer;
-    }
 
-    /************** menu Section ****************/
+    /*-----------------------menu Section-----------------*/
     .menu {
         display: flex;
         flex-direction: row;
@@ -210,15 +212,15 @@
     }
 
 
-    /************** Hero Section ****************/
+    /*-------------------Hero Section ---------------------*/
     #Hero {
-        background-color: black;
+        background-color: var(--primary-bg-color);
         padding-top: 0;
     }
 
     .div-hero {
         position: relative;
-        background-color: black;
+        background-color: var(--primary-bg-color);
         min-height: 90vh;
         top: 0;
         display: flex;
@@ -296,28 +298,83 @@
     .social-media svg:hover,
     .tech-stack svg:hover {
         cursor: pointer;
-        color: var(--seconday-text-color);
+        transition: var(--transition);
+
     }
 
     .project-btn {
+        letter-spacing: .2rem;
+        font-size: 1.2rem;
         display: flex;
         flex-direction: column;
+        gap: 1rem;
         justify-content: center;
         align-items: center;
         margin-top: 2rem;
-        color: white;
         animation: fadeInDown 3.5s ease-in-out;
     }
 
-    .project-btn p {
-        color: inherit;
+
+
+
+
+    /*---------------------Projects sections--------------------*/
+
+    #Projects {
+        background-color: var(--primary-bg-color);
     }
 
-    .project-btn:hover {
-        cursor: pointer;
-        color: var(--Grayish-Blue);
+    .div-projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        background-color: var(--primary-bg-color);
     }
 
+    .div-project-tile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        background-color: var(--secondary-bg-color);
+        padding: 2rem;
+
+    }
+
+    .div-project-tile {
+        width: 30%;
+    }
+
+    .div-project-tile h3 {
+        font-size: 2rem;
+        color: var(--text-color);
+    }
+
+    .div-project-tile p {
+        letter-spacing: .02rem;
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .div-project-tile-links {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .div-project-tile-links ul {
+        display: flex;
+
+    }
+
+    li {
+        color: var(--tech-list);
+        font-size: 1rem;
+    }
+
+
+
+    /*----------------------Animations----------------------*/
 
     @keyframes fadeInDown {
         0% {
@@ -342,6 +399,9 @@
             transform: translateX(0);
         }
     }
+
+
+    /*----------------------Tablet----------------------*/
 
     @media (min-width: 768px) and (max-width: 1024px) {
 
@@ -369,7 +429,7 @@
         /* Adjust other elements as necessary */
     }
 
-
+    /*----------------------Mobile----------------------*/
 
     @media (max-width: 768px) {
         .ham {
@@ -478,6 +538,10 @@
 
         .project-btn {
             flex-direction: row;
+        }
+
+        .div-project-tile {
+            width: 100%;
         }
 
     }
