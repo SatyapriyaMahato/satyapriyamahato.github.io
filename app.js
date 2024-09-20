@@ -21,10 +21,11 @@ window.addEventListener('scroll', () => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const tiles = document.querySelectorAll('.div-project-tile');
+    const tiles = document.querySelectorAll('.project-description');
+    const images = document.querySelectorAll('.project-image');
 
     const observerOptions = {
-        threshold: 0.1 // When 10% of the tile is visible
+        threshold: 0.2 // % of the tile is visible
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -38,5 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tiles.forEach(tile => {
         observer.observe(tile);
+    });
+    images.forEach(image => {
+        observer.observe(image);
     });
 });
