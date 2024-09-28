@@ -21,11 +21,15 @@ window.addEventListener('scroll', () => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    const aboutImage = document.querySelector('.div-about-image');
+    const aboutDetail = document.querySelector('.div-about-description');
     const tiles = document.querySelectorAll('.project-description');
     const images = document.querySelectorAll('.project-image');
+    const form = document.querySelector('.div-contact-form');
+    const contactIcons = document.querySelector('.div-contact-icons');
 
     const observerOptions = {
-        threshold: 0.2 // % of the tile is visible
+        threshold: 0.4 // % of the tile is visible
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -43,4 +47,30 @@ document.addEventListener('DOMContentLoaded', function () {
     images.forEach(image => {
         observer.observe(image);
     });
+
+    observer.observe(form);
+    observer.observe(contactIcons);
+    observer.observe(aboutDetail);
+    observer.observe(aboutImage);
 });
+
+const videos = document.querySelectorAll('.project-video');
+
+videos.forEach((vid) => {
+    vid.addEventListener('mouseover', function () {
+        vid.play();
+    });
+});
+
+
+videos.forEach((vid) => {
+    vid.addEventListener('mouseout', function () {
+        vid.pause();
+        vid.currentTime = 0;
+    });
+});
+
+
+
+
+
