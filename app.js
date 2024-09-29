@@ -72,5 +72,22 @@ videos.forEach((vid) => {
 
 
 
+const form = document.getElementById('ContactForm');
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Get the form data
+    const formData = new FormData(form);
+
+    // // Example: Log the form data to the console
+    // console.log('Name:', formData.get('name'));
+    // console.log('Email:', formData.get('email'));
+    // console.log('Message:', formData.get('message'));
+
+    form.reset();
+
+});
+
 
 

@@ -866,6 +866,10 @@
             text-align: left;
         }
 
+        .lines {
+            display: none;
+        }
+
         .section-heading {
             text-align: center;
         }
