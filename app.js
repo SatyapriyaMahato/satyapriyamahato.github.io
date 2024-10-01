@@ -10,10 +10,9 @@ let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (window.scrollY > lastScrollY) {
-        // User is scrolling down, hide the header
-        header.style.top = '-60px'; // Adjust based on header height
+        header.style.top = '-60px';
     } else {
-        // User is scrolling up, show the header
+
         header.style.top = '0';
     }
     lastScrollY = window.scrollY;
@@ -71,7 +70,6 @@ videos.forEach((vid) => {
 });
 
 
-
 const form = document.getElementById('ContactForm');
 
 form.addEventListener('submit', function (event) {
@@ -80,14 +78,8 @@ form.addEventListener('submit', function (event) {
     // Get the form data
     const formData = new FormData(form);
 
-    // // Example: Log the form data to the console
-    // console.log('Name:', formData.get('name'));
-    // console.log('Email:', formData.get('email'));
-    // console.log('Message:', formData.get('message'));
-
     form.reset();
 
 });
-
 
 

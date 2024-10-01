@@ -11,13 +11,13 @@
         /* ### Primary */
 
         --tech-list: #a9a9a9;
-        --Link-at-rest: #7e7e7e;
+        --Link-at-rest: #949494;
         --Link-at-hover: #ffffff;
         --Soft-Red: hsl(0, 94%, 66%);
         --btn-bg-color: #5e5e5eff;
         --secondary-bg-color: #1b1a1a;
         --primary-bg-color: #171717;
-        --primary-bg-color-transparent: #171717b3;
+        --transparent-bg: #141414eb;
         --box-shadow: 0px 0px 14px 3px #00000082;
         ;
 
@@ -228,7 +228,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background-color: var(--primary-bg-color-transparent);
+        background-color: #1a1a1aab;
     }
 
     .top-nav {
@@ -277,7 +277,7 @@
     }
 
     .menu li {
-        background-color: var(--primary-bg-color-transparent);
+        background-color: transparent;
         padding: 0;
         box-shadow: none;
     }
@@ -285,96 +285,26 @@
 
     /*-------------------Hero Section ---------------------*/
     #Hero {
-        padding-top: 5rem;
         position: relative;
         height: 100%;
+        background-image: url("./images/bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
-    .lines {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        margin: auto;
-        width: 90vw;
-    }
-
-    .line {
-        position: absolute;
-        width: 1px;
-        height: 100%;
-        top: 0;
-        background: rgba(255, 255, 255, 0.1);
-        overflow: hidden;
-    }
-
-    .line::after {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 15vh;
-        width: 150%;
-        top: -50%;
-        left: 0;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
-        animation: drop 7s 0s infinite;
-        animation-fill-mode: forwards;
-        animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-        transform-origin: 0 0;
-    }
-
-    .line:nth-child(1) {
-        left: 0%;
-
-    }
-
-    .line:nth-child(1)::after {
-        animation-delay: 1s;
-    }
-
-    .line:nth-child(2) {
-        left: 25%;
-
-    }
-
-    .line:nth-child(2)::after {
-        animation-delay: 1.5s;
-    }
-
-    .line:nth-child(3) {
-        left: 50%;
-    }
-
-    .line:nth-child(3)::after {
-        animation-delay: 2s;
-    }
-
-    .line:nth-child(4) {
-        left: 75%;
-    }
-
-    .line:nth-child(4)::after {
-        animation-delay: 2.5s;
-    }
-
-    .line:nth-child(5) {
-        left: 100%;
-    }
-
-    .line:nth-child(5)::after {
-        animation-delay: 1.5s;
-    }
-
-
-    @keyframes drop {
-        0% {
-            top: -50%;
-        }
-
-        100% {
-            top: 110%;
-        }
+    .hero-img {
+        background-image: url("./images/dp1.png");
+        width: 15rem;
+        height: 15rem;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: 2px solid black;
+        box-shadow: 0px 0px 14px 3px #00000082;
+        animation: morph 8s ease-in-out infinite;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        position: relative;
+        transition: all 1s ease-in-out;
     }
 
     .div-hero {
@@ -389,17 +319,6 @@
         gap: 1rem;
 
     }
-
-    .hero_image {
-        width: 100px;
-        border-radius: 1rem;
-        margin-top: 3rem;
-        animation: fadeInDown .5s ease-in-out;
-        box-shadow: var(--box-shadow);
-        filter: brightness(1);
-
-    }
-
 
     .div-hero h1 {
         font-size: 4rem;
@@ -467,8 +386,6 @@
         margin-top: 2rem;
         animation: fadeInDown 3.5s ease-in-out;
     }
-
-
 
 
 
@@ -729,6 +646,20 @@
         }
     }
 
+    @keyframes morph {
+        0% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+
+        50% {
+            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        }
+
+        100% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+    }
+
 
     /*----------------------Tablet----------------------*/
 
@@ -782,12 +713,12 @@
             top: 6rem;
             width: 0;
             height: 0;
-            background-color: var(--primary-bg-color-transparent);
+            background-color: var(--transparent-bg);
             overflow: hidden;
             align-items: start;
             scale: 0;
             gap: 0;
-            transition: all ease 600ms;
+            transition: all ease .2s;
 
         }
 
@@ -805,8 +736,8 @@
 
         .menu.active {
             padding: 2rem 0;
-            width: 14rem;
-            height: 15rem;
+            width: 13rem;
+            height: 20rem;
             scale: 1;
 
         }
