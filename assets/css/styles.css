@@ -162,17 +162,20 @@ video {
     border-radius: 1rem;
     filter: var(--vid-brightness-rest);
     box-shadow: var(--box-shadow);
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 
 img:hover {
     filter: var(--vid-brightness-hover);
     transition: var(--transition);
+    cursor: pointer;
 }
+
 
 video:hover {
     filter: var(--vid-brightness-hover);
     cursor: pointer;
-    play();
     transition: var(--transition);
 
 }

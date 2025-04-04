@@ -1,17 +1,16 @@
 
+document.querySelectorAll("img, video").forEach((el) => {
+    el.addEventListener("contextmenu", (e) => e.preventDefault());
+});
+
+
+
 // Theme toggle function
 const themeToggleBtn = document.getElementById("theme-toggle");
 const sunIcon = document.getElementById("sun-icon");
 const moonIcon = document.getElementById("moon-icon");
 
-// Apply saved theme on page load
-// document.addEventListener("DOMContentLoaded", () => {
-//     const savedTheme = localStorage.getItem("theme") || "light";
-//     document.documentElement.setAttribute("data-theme", savedTheme);
-//     updateIcon(savedTheme);
-// });
 
-// Theme toggle function
 themeToggleBtn.addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "light" ? "dark" : "light";
@@ -32,9 +31,6 @@ function updateIcon(theme) {
         moonIcon.style.display = "block";
     }
 }
-
-
-
 
 
 let sections = document.querySelectorAll('.div-project-tile');
